@@ -4,11 +4,9 @@ A chat agent that reads a purchase request package (request, supplier quote, lea
 
 Design, decisions and risks: see [SOLUCION.md](SOLUCION.md). Threat model: [docs/SECURITY.md](docs/SECURITY.md).
 
-## Test link
-
 - Repository: `https://github.com/<your-user>/reto-03`
-- Live agent: `https://<service-name>.onrender.com`
-- Access key: `<your ACCESS_KEY>` (the page asks for it on first load)
+- Live agent: `https://reto-03-po-agent.onrender.com`
+- Access key: `5wJVdnU1DHHdVm2wJOQuCGgFbu4gpzh/` (the page asks for it on first load)
 
 The live service runs on Render's free plan and sleeps after 15 minutes without traffic. The first request after a pause takes up to a minute while the container starts.
 
