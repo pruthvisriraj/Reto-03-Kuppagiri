@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Purchase orders agent</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="rail" aria-label="Cases and session">
+      <div class="brand">
+        <h1>Purchase orders</h1>
+        <p class="brand-sub">Prepares POs for SAP from a request, a quote and an approval.</p>
+      </div>
+
+      <section class="rail-block">
+        <h2>Cases</h2>
+        <ul class="cases" id="cases"></ul>
+        <button type="button" class="link-button" id="process-all">Process all six cases</button>
+      </section>
+
+      <section class="rail-block">
+        <h2>Session</h2>
+        <dl class="facts">
+          <div><dt>Model</dt><dd id="model">Checking…</dd></div>
+          <div><dt>Tokens used</dt><dd id="tokens">0</dd></div>
+        </dl>
+        <div class="rail-actions">
+          <button type="button" class="secondary" id="new-session">New session</button>
+          <button type="button" class="secondary" id="download-control">Control log (CSV)</button>
+        </div>
+      </section>
+
+      <form class="key-form" id="key-form" hidden>
+        <label for="access-key">Access key</label>
+        <input id="access-key" type="password" autocomplete="off" required>
+        <button type="submit" class="secondary">Save key</button>
+      </form>
+    </aside>
+
+    <main class="desk">
+      <div class="conversation" id="conversation" aria-live="polite">
+        <div class="empty" id="empty">
+          <p class="empty-title">Pick a case or type a request.</p>
+          <p>Example: <q>Process sol-004. Show me the PO as it would look in SAP, which controls passed and which did not, and don't create it until I confirm.</q></p>
+          <p>Every tool the agent runs shows up under its answer. When an exception needs you, a confirmation slip appears.</p>
+        </div>
+      </div>
+
+      <form class="composer" id="composer">
+        <label class="visually-hidden" for="message">Message to the agent</label>
+        <textarea id="message" rows="2" maxlength="4000" placeholder="Process sol-001" required></textarea>
+        <button type="submit" id="send">Send</button>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

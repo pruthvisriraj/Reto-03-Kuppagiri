@@ -1,0 +1,28 @@
+{
+  "name": "reto-03-ordenes-compra",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Conversational agent that prepares and creates purchase orders in a simulated SAP",
+  "scripts": {
+    "dev": "bun --watch src/server.ts",
+    "start": "bun src/server.ts",
+    "demo": "bun run demo.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "build:modulo": "bun scripts/build-modulo.ts",
+    "check:modulo": "bun scripts/build-modulo.ts --check"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "zod": "^4"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.2",
+    "@types/node": "^26.6.3",
+    "typescript": "^5"
+  }
+}
